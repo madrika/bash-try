@@ -1,0 +1,67 @@
+#!/bin/bash
+
+############################################################
+# Help                                                     #
+############################################################
+function printUsage() {
+    cat <<EOF
+
+Synopsis
+    $scriptName [-i interval] [-n number] command
+
+
+    -i interval
+	   The time interval between checks if the process is not performed.
+        
+
+   -n number
+	   Number of  repetitions for command completion.
+        
+Sample:
+	
+	try -i 3 -n 5 mkfifo MHPD
+	try -i 5 -n 7 ping 8.8.8.8
+
+EOF
+}
+############################################################
+# the command to execute.                                  #       
+############################################################
+array="$@"
+if [[ array -eq "-h" ]]; then
+		printUsage
+		exit 0
+fi  
+############################################################
+############################################################
+# Main program                                             #
+############################################################
+############################################################
+#arguman start command
+command=6   
+#number arguman
+ARG=`expr $# + 1`
+#get count command
+COUNT=`expr $ARG - $command`
+#get -i :interval
+interval=`expr $3` 
+#get -n :number
+for i in `eval echo {1..$5}` ; do  
+#pattern
+f= ${@:$command:$COUNT}
+
+ 
+	if [[ $? -eq 0 ]]; then  
+	   
+		echo "Operation successfully"	
+		
+	exit 
+			
+	elif [[ $? -eq 1 ]]; then
+	
+		sleep $interval 1>&2
+	
+	fi
+	
+
+done
