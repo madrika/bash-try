@@ -25,7 +25,7 @@ Synopsis
 	   The time interval between checks if the process is not performed.
         
 
-   -n number
+    -n number
 	   Number of  repetitions for command completion.
         
 Sample:
