@@ -34,4 +34,4 @@ Sample:
 	try -i 5 -n 7 ping 8.8.8.8
 	
 ## note:
-@dwsclass dws-dev-006-bash
+[@dwsclass] dws-dev-006-bash
