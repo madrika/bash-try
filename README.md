@@ -32,3 +32,6 @@ Sample:
 	
 	try -i 3 -n 5 mkfifo MHPD
 	try -i 5 -n 7 ping 8.8.8.8
+	
+## note:
+@dwsclass dws-dev-006-bash
